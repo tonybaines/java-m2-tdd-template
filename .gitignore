@@ -1,6 +1,7 @@
 target/
 .classpath
 .project
+*.zip
 *.i*
 *.log
 *~

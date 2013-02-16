@@ -1,0 +1,10 @@
+#!/bin/sh
+NAME=$(basename $(pwd))
+
+# Clean-up
+rm -rf $NAME $NAME-*.zip
+mkdir $NAME
+mvn clean idea:idea eclipse:eclipse dependency:copy-dependencies
+cp -a src target/lib README* pom.xml .project *.i?? ./$NAME
+zip -r $NAME-$(date +%Y-%m-%d:%H%M%S).zip $NAME
+rm -rf $NAME
