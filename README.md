@@ -2,6 +2,22 @@ Download the zip as a quick-start Maven 2 project
 
         https://github.com/tonybaines/java-m2-tdd-template/archive/master.zip
 
+Edit pom.xml and fix the 'CHANGE-ME' values to something appropriate, and you're ready to go
+
+Some useful Maven goals
+* The usual ones
+
+        mvn clean
+        mvn test
+
+* Generate IDE project files (if you don;t want to just import the Maven project)
+
+        mvn eclipse:eclipse
+        mvn idea:idea
+
+
+---
+
 To prepare a ready-to-go project e.g. for tutorials run the packaging script
 
         $ ./package
