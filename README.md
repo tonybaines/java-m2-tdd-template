@@ -2,6 +2,8 @@ Download the zip as a quick-start Maven 2 project
 
         https://github.com/tonybaines/java-m2-tdd-template/archive/master.zip
 
+Rename the 'java-m2-tdd-template' folder to the project name (the directory name is used to build the packaged zip)
+
 Edit pom.xml and fix the 'CHANGE-ME' values to something appropriate, and you're ready to go
 
 Some useful Maven goals
