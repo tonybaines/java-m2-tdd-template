@@ -17,6 +17,12 @@ Some useful Maven goals
         mvn eclipse:eclipse
         mvn idea:idea
 
+---
+Extras
+* There's a Cucumber demo / template
+
+TODO
+* Mockito HOW-TO
 
 ---
 
