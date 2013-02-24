@@ -18,10 +18,8 @@ Some useful Maven goals
         mvn idea:idea
 
 ---
-Extras
+Extras under test.demo
 * There's a Cucumber demo / template
-
-TODO
 * Mockito HOW-TO
 
 ---
