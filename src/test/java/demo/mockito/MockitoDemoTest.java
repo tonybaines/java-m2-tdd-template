@@ -57,4 +57,10 @@ public class MockitoDemoTest {
         assertThat(concreteList.lastIndexOf("Soup"), is(greaterThan(0)));
     }
 
+    @Test(expected = IllegalStateException.class)
+    public void mocksCanThrowExceptions() {
+        when(list.contains("Nuts")).thenThrow(new IllegalStateException("Only a test"));
+        list.contains("Nuts");
+    }
+
 }
