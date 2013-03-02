@@ -63,4 +63,10 @@ public class MockitoDemoTest {
         list.contains("Nuts");
     }
 
+    @Test(expected = IllegalStateException.class)
+    public void mocksCanThrowExceptionsForVoidMethods() {
+        Mockito.doThrow(new IllegalStateException("Only a test")).when(list).clear();
+        list.clear();
+    }
+
 }
