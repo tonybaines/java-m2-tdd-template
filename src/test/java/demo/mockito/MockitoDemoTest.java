@@ -4,14 +4,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.greaterThan;
+import org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
-import static org.mockito.Mockito.*;
 
 /* Some examples of how to use Mockito
  *
@@ -31,7 +31,7 @@ public class MockitoDemoTest {
     public void mockitoTestDoublesNeedAnExplicitVerificationStep() {
         list.add("Hello"); // void methods can't have expectations set
 
-        verify(list).add("Hello");
+        Mockito.verify(list).add("Hello");
     }
 
     @Test
@@ -42,7 +42,7 @@ public class MockitoDemoTest {
 
     @Test
     public void mockitoUsesAFluentTypeSafeApiToSetExplicitResponses() {
-        when(list.contains("Nuts")).thenReturn(true); // Stubbed behaviour
+        Mockito.when(list.contains("Nuts")).thenReturn(true); // Stubbed behaviour
 
         assertThat(list.contains("Cheese"), is(false));
         assertThat(list.contains("Nuts"), is(true));
@@ -50,16 +50,16 @@ public class MockitoDemoTest {
 
     @Test
     public void classesCanAlsoBeMocked() {
-        List concreteList = mock(ArrayList.class);
+        List concreteList = Mockito.mock(ArrayList.class);
 
-        when(concreteList.lastIndexOf("Soup")).thenReturn(Integer.MAX_VALUE);
+        Mockito.when(concreteList.lastIndexOf("Soup")).thenReturn(Integer.MAX_VALUE);
 
         assertThat(concreteList.lastIndexOf("Soup"), is(greaterThan(0)));
     }
 
     @Test(expected = IllegalStateException.class)
     public void mocksCanThrowExceptions() {
-        when(list.contains("Nuts")).thenThrow(new IllegalStateException("Only a test"));
+        Mockito.when(list.contains("Nuts")).thenThrow(new IllegalStateException("Only a test"));
         list.contains("Nuts");
     }
 
